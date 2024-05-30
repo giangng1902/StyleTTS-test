@@ -258,7 +258,7 @@ class ResBlk1d(nn.Module):
         return x
 
     def forward(self, x):
-        # print(x.size())
+        print(x.size())
         x = self._shortcut(x) + self._residual(x)
         return x / math.sqrt(2)  # unit variance
 
