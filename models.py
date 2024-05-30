@@ -236,6 +236,7 @@ class ResBlk1d(nn.Module):
 
     def _shortcut(self, x):
         if self.learned_sc:
+            print("true")
             x = self.conv1x1(x)
         x = self.downsample(x)
         return x
@@ -258,7 +259,6 @@ class ResBlk1d(nn.Module):
         return x
 
     def forward(self, x):
-        print(x.size())
         x = self._shortcut(x) + self._residual(x)
         return x / math.sqrt(2)  # unit variance
 
