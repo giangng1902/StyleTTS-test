@@ -236,7 +236,8 @@ class ResBlk1d(nn.Module):
 
     def _shortcut(self, x):
         if self.learned_sc:
-            print("true")
+            # print("true")
+            print(x.size())
             x = self.conv1x1(x)
         x = self.downsample(x)
         return x
